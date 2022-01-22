@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { VehiclesContextProvider } from './globalState/vehiclesContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <VehiclesContextProvider>
+      <App />
+    </VehiclesContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

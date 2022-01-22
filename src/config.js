@@ -1,3 +1,4 @@
+export const useVehicleDummyData = true;
 
 export const mapContainerStyle = {
   width: '200px',

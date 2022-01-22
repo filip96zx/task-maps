@@ -1,15 +1,18 @@
-import React from 'react';
-import useGetVehicles from '../../api/getVehicles';
+import React, { useContext } from 'react';
+import VehiclesContext from '../../globalState/vehiclesContext';
 import Map from './map';
 import MarkerCluster from './markerCluster';
 
+
+
 function MapWindow() {
-  const { vehicles } = useGetVehicles();
+  const vehiclesContext = useContext(VehiclesContext);
+
 
   return (
     <main>
-      <Map >
-        {vehicles && <MarkerCluster items={vehicles} />}
+      <Map>
+        {vehiclesContext.data && <MarkerCluster items={vehiclesContext.data} />}
       </Map>
     </main>
   );
