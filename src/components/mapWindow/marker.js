@@ -28,20 +28,15 @@ function Marker(props) {
 
 
   if (data.discriminator.toLowerCase() === 'vehicle') {
-    let iconUrl;
+    let icon;
 
     if ('battery' === vehiclesIcons) {
-      iconUrl = setVehicleBatteryIcon(data.batteryLevelPct);
+      icon = setVehicleBatteryIcon(data.batteryLevelPct);
     } else if ('status' === vehiclesIcons) {
-      iconUrl = setVehicleStatusIcon(data.status);
+      icon = setVehicleStatusIcon(data.status);
     } else {
-      iconUrl = setVehicleDefaultIcon();
+      icon = setVehicleDefaultIcon();
     }
-
-    const icon = {
-      url: iconUrl,
-      scaledSize: new window.google.maps.Size(40, 40)
-    };
     return (
       <GoogleMarker ref={markerRef} onClick={openInfoWindowHandler} position={convertLocation(data.location)} clusterer={clusterer} icon={icon}>
         {showInfoWindow && <InfoWindow onCloseClick={closeInfoWindowHandler} anchor={markerRef.current} data={data} />}
