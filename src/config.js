@@ -1,8 +1,8 @@
 export const useVehicleDummyData = true;
 
 export const mapContainerStyle = {
-  width: '200px',
-  height: '200px',
+  width: '100%',
+  height: '100%',
 };
 
 export const googleMapsApiKey = "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk";
