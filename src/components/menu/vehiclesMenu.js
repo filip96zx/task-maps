@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import VehiclesContext from '../../globalState/vehiclesContext';
 
-export default function CarsMenu() {
+export default function VehiclesMenu() {
   const { filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
 
 
@@ -23,7 +23,7 @@ export default function CarsMenu() {
 
   return (
     <li>
-      <h3>Cars</h3>
+      <h3>Vehicles</h3>
       <form>
         <h4>Options</h4>
         <div className='form-group'>
