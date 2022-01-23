@@ -9,6 +9,7 @@ const styles = {
   fontColorDarker: 'rgb(220,220,220)',
   fontColorDarker2: 'rgb(200,200,200)',
   fontColorDarker3: 'rgb(180,180,180)',
+  fontColorDarker4: 'rgb(80,80,80)',
 }
 
 export default styles;

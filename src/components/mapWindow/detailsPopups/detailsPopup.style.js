@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import styles from "../../../globalStyles/variables";
+import styled from 'styled-components';
+import styles from '../../../globalStyles/variables';
 
 const DetailsPopupStyled = styled.div`
   position: absolute;
