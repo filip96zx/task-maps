@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { VehiclesContextProvider } from './globalState/vehiclesContext';
 import { DataDisplayContextProvider } from './globalState/dataDisplayContext';
+import { GlobalStyles } from './globalStyles/globalStyles';
 
 ReactDOM.render(
   <React.StrictMode>
     <DataDisplayContextProvider>
       <VehiclesContextProvider>
+        <GlobalStyles/>
         <App />
       </VehiclesContextProvider>
     </DataDisplayContextProvider>

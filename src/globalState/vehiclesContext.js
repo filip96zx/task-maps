@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { useVehicleDummyData } from '../config';
+import { useVehicleDummyData } from '../config/config';
 import { getXDummyVehicles } from '../dummy-data/vehicle';
 
 const VehiclesContext = createContext({

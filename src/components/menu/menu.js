@@ -10,13 +10,11 @@ export default function Menu() {
 
   return (
     <MenuStyled>
-      <h2>menu</h2>
       <menu>
         <VehiclesMenu />
         <ParkingsMenu />
         <PointsOfInterestMenu />
       </menu>
-
     </MenuStyled>
   );
 }

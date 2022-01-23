@@ -1,4 +1,4 @@
-import { vehicleMarkerConfig } from "../config";
+import { vehicleMarkerConfig } from "../config/config";
 
 const { width, height } = vehicleMarkerConfig.iconSize;
 
