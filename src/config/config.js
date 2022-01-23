@@ -8,43 +8,40 @@ export const mapContainerStyle = {
 export const googleMapsApiKey = "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk";
 
 export const vehicleMarkerConfig = {
-  defaultIconUrl: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-  iconSize: {
-    width: 40,
-    height: 40
-  },
+  defaultIconColor:'rgb(10, 123, 252)',
+  iconScale: 1,
   batteryLevelIcons: [
     {
-      batteryPercent: 90,
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+      batteryPercent: 85,
+      color: 'green'
     },
     {
-      batteryPercent: 75,
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
+      batteryPercent: 65,
+      color: 'rgb(214, 204, 2)'
     },
     {
-      batteryPercent: 50,
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png'
+      batteryPercent: 40,
+      color: 'orange'
     },
     // start form 0
     {
       batteryPercent: 0,
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+      color: 'darkred',
     }
   ],
   statusIcons: [
     {
       status: 'available',
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+      color: 'green'
     },
     {
       status: 'inaccessible',
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+      color: 'darkred'
     },
     // dafault has to be last
     {
       status: 'default',
-      iconUrl: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+      color: 'rgb(10, 123, 252)'
     }
   ]
 };
