@@ -7,6 +7,7 @@ const MenuItemStyled = styled.li`
   padding: 0.7rem 15px;
   h3 {
     margin: 0;
+    border-bottom: 2px solid ${styles.secondaryColor};
   }
   form {
     position: absolute;
@@ -14,14 +15,17 @@ const MenuItemStyled = styled.li`
     left: 0;
     transform: translateY(100%);
     z-index: 1;
-    background: ${styles.mainColorTransparent};
+    background: ${styles.mainColorTransparent2};
     .form-control {
-      border-bottom: 1px solid ${styles.secondaryColor};
-      border-top: none;
       padding: 1px;
     }
     input, select {
       width: 100%;
+      background: ${styles.mainColorTransparent};
+      color: ${styles.fontColor};
+      border: 1px solid ${styles.secondaryColor};
+      border-radius: 3px;
+      font-size: 1.05rem;
     }
 
     label{

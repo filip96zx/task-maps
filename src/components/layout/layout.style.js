@@ -14,7 +14,7 @@ const LayoutStyled = styled.div`
     position: absolute;
     bottom: -40%;
     left:-20%;
-    background-color: rgba(47, 169, 113, 1);
+    background-color: ${styles.mainColor};
     background-image: radial-gradient(circle, ${styles.secondaryColor} -15%, ${styles.mainColor} 47%);
     width: 200%;
     height: 200%;
@@ -24,7 +24,7 @@ const LayoutStyled = styled.div`
     position: relative;
     flex-grow: 1;
     margin: 1rem;
-    height: 80%;
+    height: 90%;
   }
 `;
 

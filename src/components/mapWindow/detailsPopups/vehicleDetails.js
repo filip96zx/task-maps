@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import DataDisplayContext from '../../../globalState/dataDisplayContext';
-import MenuPopupStyled from './detailsPopup.style';
+import Button from '../../ui/button';
+import DetailsPopupStyled from './detailsPopup.style';
 
 export default function VehicleDetails(props) {
   const { closeDetailsPopup } = useContext(DataDisplayContext);
@@ -11,7 +12,8 @@ export default function VehicleDetails(props) {
   const colorNormalized = color.toLowerCase();
 
   return (
-    <MenuPopupStyled>
+    <DetailsPopupStyled>
+      <Button className="close-btn" onClick={closeDetailsPopup}>&times;</Button>
       <h2>{name}</h2>
       <div className='data-row'>
         <h3>type:</h3><span>{typeNormalized}</span>
@@ -31,8 +33,6 @@ export default function VehicleDetails(props) {
       <div className='data-row--important'>
         <h3>status:</h3><span>{statusNormalized}</span>
       </div>
-
-      <button onClick={closeDetailsPopup}>close</button>
-    </MenuPopupStyled>
+    </DetailsPopupStyled>
   );
 }
