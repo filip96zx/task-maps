@@ -9,6 +9,7 @@ function Marker(props) {
   const { clusterer, data } = props;
   const [showInfoWindow, setShowInfoWindow] = useState(false);
   const markerRef = useRef();
+  const discriminatorNormalized = data.discriminator.toLowerCase();
   const { icons: vehiclesIcons } = useContext(VehiclesContext);
 
   const convertLocation = (location) => {
@@ -27,7 +28,7 @@ function Marker(props) {
   };
 
 
-  if (data.discriminator.toLowerCase() === 'vehicle') {
+  if (discriminatorNormalized === 'vehicle') {
     let icon;
 
     if ('battery' === vehiclesIcons) {
@@ -39,7 +40,7 @@ function Marker(props) {
     }
     return (
       <GoogleMarker ref={markerRef} onClick={openInfoWindowHandler} position={convertLocation(data.location)} clusterer={clusterer} icon={icon}>
-        {showInfoWindow && <InfoWindow onCloseClick={closeInfoWindowHandler} anchor={markerRef.current} data={data} />}
+        {showInfoWindow && <InfoWindow onCloseClick={closeInfoWindowHandler} type={discriminatorNormalized} anchor={markerRef.current} data={data} />}
       </GoogleMarker>
     );
   }
