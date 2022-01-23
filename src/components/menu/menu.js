@@ -1,7 +1,7 @@
 import React from 'react';
-import VehiclesMenu from './vehiclesMenu';
-import ParkingsMenu from './parkingsMenu.';
-import PointsOfInterestMenu from './pointsOfInterestMenu';
+import VehiclesMenuItem from './vehiclesMenuItem';
+import ParkingsMenuItem from './parkingsMenuItem';
+import PointsOfInterestMenuItem from './pointsOfInterestMenuItem';
 
 import MenuStyled from './menu.style';
 
@@ -11,9 +11,9 @@ export default function Menu() {
   return (
     <MenuStyled>
       <menu>
-        <VehiclesMenu />
-        <ParkingsMenu />
-        <PointsOfInterestMenu />
+        <VehiclesMenuItem />
+        <ParkingsMenuItem />
+        <PointsOfInterestMenuItem />
       </menu>
     </MenuStyled>
   );

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import VehiclesContext from '../../globalState/vehiclesContext';
 import MenuItemStyled from './menuItem.style';
 
-export default function VehiclesMenu() {
+export default function VehiclesMenuItem() {
   const { filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
 
 

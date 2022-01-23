@@ -1,11 +1,11 @@
 import React from 'react';
 import MenuItemStyled from './menuItem.style';
 
-export default function ParkingsMenu() {
+export default function PointsOfInterestMenuItem() {
   return (
     <MenuItemStyled>
-      <h3>Parkings</h3>
-      
+      <h3>Points of interest</h3>
+
     </MenuItemStyled>
   );
 }
