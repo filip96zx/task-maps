@@ -1,17 +1,23 @@
-import React from 'react';
-import CarsMenu from './carsMenu';
+import React, { useContext } from 'react';
+import VehiclesMenu from './vehiclesMenu';
 import ParkingsMenu from './parkingsMenu.';
 import PointsOfInterestMenu from './pointsOfInterestMenu';
+import DetailsMenuPopup from './detailsMenuPopup';
+import DataDisplayContext from '../../globalState/dataDisplayContext';
+import MenuStyled from './menu.style';
 
 export default function Menu() {
+  const { menuDetailsPopup } = useContext(DataDisplayContext);
+
   return (
-    <aside>
+    <MenuStyled>
       <h2>menu</h2>
       <menu>
-        <CarsMenu />
-        <ParkingsMenu/>
+        <VehiclesMenu />
+        <ParkingsMenu />
         <PointsOfInterestMenu />
       </menu>
-    </aside>
+      {menuDetailsPopup && <DetailsMenuPopup data={menuDetailsPopup} />}
+    </MenuStyled>
   );
 }

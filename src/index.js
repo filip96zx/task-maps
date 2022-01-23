@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { VehiclesContextProvider } from './globalState/vehiclesContext';
-import { CategoryDisplayContextProvider } from './globalState/categoryDisplayContext';
+import { DataDisplayContextProvider } from './globalState/dataDisplayContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CategoryDisplayContextProvider>
+    <DataDisplayContextProvider>
       <VehiclesContextProvider>
         <App />
       </VehiclesContextProvider>
-    </CategoryDisplayContextProvider>
+    </DataDisplayContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

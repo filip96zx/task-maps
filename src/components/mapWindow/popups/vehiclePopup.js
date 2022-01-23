@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import DataDisplayContext from '../../../globalState/dataDisplayContext';
 
 export default function VehiclePopup(props) {
-  const { name, platesNumber, rangeKm, batteryLevelPct, type } = props.data;
+  const { setDetailsPopup } = useContext(DataDisplayContext);
+  const { name, rangeKm, type } = props.data;
+
+  const openMenuDetailsPopup = () => {
+    setDetailsPopup(props.data);
+  };
+
   return (
     <div>
       <h3>{name}</h3>
       <div>
         <h4>Type</h4><span>{type.toLowerCase()}</span>
-        <h4>Battery %</h4><span>{batteryLevelPct}%</span>
+
         <h4>Range (km)</h4><span>{rangeKm}km</span>
-        <h4>Plate Number</h4><span>{platesNumber}</span>
       </div>
+      <button onClick={openMenuDetailsPopup}>more...</button>
     </div>
   );
 }
