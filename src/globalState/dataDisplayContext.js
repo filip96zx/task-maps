@@ -1,9 +1,9 @@
 import React, { createContext, useState } from 'react';
 
 const DataDisplayContext = createContext({
-  categories: { cars: true, parkings: false, poi: false },
+  categories: { vehicles: true, parkings: false, poi: false },
   menuDetailsPopup: null,
-  showCarsCategory: () => { },
+  showVehiclesCategory: () => { },
   showParkingsCategory: () => { },
   showPoiCategory: () => { },
   setDetailsPopup: () => { },
@@ -13,19 +13,19 @@ const DataDisplayContext = createContext({
 export default DataDisplayContext;
 
 export function DataDisplayContextProvider(props) {
-  const [categories, setCategories] = useState({ cars: true, parkings: false, poi: false });
+  const [categories, setCategories] = useState({ vehicles: true, parkings: false, poi: false });
   const [menuDetailsPupup, setMenuDetailsPupup] = useState(null);
 
-  const showCarsCategory = () => {
-    setCategories({ cars: true, parkings: false, poi: false });
+  const showVehiclesCategory = () => {
+    setCategories({ vehicles: true, parkings: false, poi: false });
   };
 
   const showParkingsCategory = () => {
-    setCategories({ cars: false, parkings: true, poi: false });
+    setCategories({ vehicles: false, parkings: true, poi: false });
   };
 
   const showPoiCategory = () => {
-    setCategories({ cars: false, parkings: false, poi: true });
+    setCategories({ vehicles: false, parkings: false, poi: true });
   };
 
   const setDetailsPopup = (popupData) => {
@@ -40,7 +40,7 @@ export function DataDisplayContextProvider(props) {
   const context = {
     categories: categories,
     menuDetailsPopup: menuDetailsPupup,
-    showCarsCategory: showCarsCategory,
+    showVehiclesCategory: showVehiclesCategory,
     setParkingsCategory: showParkingsCategory,
     showPoiCategory: showPoiCategory,
     setDetailsPopup: setDetailsPopup,

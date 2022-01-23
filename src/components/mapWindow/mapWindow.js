@@ -1,21 +1,21 @@
 import React, { useContext } from 'react';
 import VehiclesContext from '../../globalState/vehiclesContext';
-import DisplayCategoriesContext from '../../globalState/categoryDisplayContext';
+import DataDisplayContext from '../../globalState/dataDisplayContext';
 import Map from './map';
 import MarkerCluster from './markerCluster';
 
 
 
 function MapWindow() {
-  const displayCategory = useContext(DisplayCategoriesContext)
+  const dataDisplay = useContext(DataDisplayContext);
   const vehiclesContext = useContext(VehiclesContext);
-  const categories = displayCategory.categories;
+  const categories = dataDisplay.categories;
 
 
   return (
     <main>
       <Map>
-        {(categories.cars && vehiclesContext.data) && <MarkerCluster items={vehiclesContext.data} />}
+        {(categories.vehicles && vehiclesContext.data) && <MarkerCluster items={vehiclesContext.data} />}
       </Map>
     </main>
   );
