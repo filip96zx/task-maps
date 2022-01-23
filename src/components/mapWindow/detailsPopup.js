@@ -1,7 +1,7 @@
 import React from 'react';
-import VehicleMenuDetails from './popups/vehicleMenuDetails';
+import VehicleMenuDetails from './detailsPopups/vehicleDetails';
 
-export default function DetailsMenuPopup(props) {
+export default function DetailsPopup(props) {
   const discriminatorNormalized = props.data.discriminator.toLowerCase();
 
   return (

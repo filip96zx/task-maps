@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
-const MenuPopupStyled = styled.div`
+const DetailsPopupStyled = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
   background: whitesmoke;
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid gray;
   h2 {
     text-align: center;
   }
@@ -34,4 +38,4 @@ const MenuPopupStyled = styled.div`
   }
 `;
 
-export default MenuPopupStyled;
+export default DetailsPopupStyled;

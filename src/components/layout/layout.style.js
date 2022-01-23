@@ -4,16 +4,17 @@ const LayoutStyled = styled.div`
   height: 100vh;
   background: lightyellow;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  aside {
-    min-width:300px;
+  header {
+    width:100vw;
     margin: 0 0.5rem;
-    height:80%;
     background: white;
     border: 2px solid gray;
   }
   main {
+    position: relative;
     flex-grow: 1;
     margin: 0 0.5rem;
     height: 80%;
