@@ -10,8 +10,8 @@ export const setParkingHasFreeSpaceIcon = (hasFreeSpace) => {
 };
 
 export const setParkingsHasChargersIcon = (hasCharger) => {
-  for (let icon of config.vehicleMarkerConfig.batteryLevelIcons) {
-    if (icon.hasCharger <= hasCharger) {
+  for (let icon of config.parkingMarkerConfig.chargersStatusIcons) {
+    if (icon.charger === hasCharger) {
       return markerColor(icon.color);
     }
   }
