@@ -2,6 +2,8 @@ import styles from '../globalStyles/variables';
 
 const config = {
   vehicleDummyData: true,
+  parkingDummyData: false,
+  poiDummyData: false,
   apiURL: 'https://dev.vozilla.pl/api-client-portal/',
   googleMapsApiKey: "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk",
   mapContainerStyle: {

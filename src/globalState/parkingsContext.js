@@ -77,12 +77,15 @@ export function ParkingsContextProvider(props) {
   };
 
   const setIconsBy = (iconsBy) => {
-    const normalizedIconsBy = iconsBy.toLowerCase();
-
+    const iconsByNormalized = iconsBy.toLowerCase();
+    if ('chargers' === iconsByNormalized) {
+      setIcons('chargers');
+    } else if ('spaces' === iconsByNormalized) {
+      setIcons('spaces');
+    } else {
+      setIcons('default');
+    }
   };
-
-
-
 
 
   const context = {

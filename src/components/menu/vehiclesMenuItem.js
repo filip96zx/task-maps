@@ -5,7 +5,7 @@ import VehiclesContext from '../../globalState/vehiclesContext';
 import MenuItemStyled from './menuItem.style';
 
 export default function VehiclesMenuItem() {
-  const { vehicles, fetchData, filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
+  const { data, fetchData, filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
   const { categories, showVehiclesCategory } = useContext(DataDisplayContext);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -32,7 +32,7 @@ export default function VehiclesMenuItem() {
 
   const handleShowCategory = () => {
     showVehiclesCategory();
-    if (!vehicles && !config.vehicleDummyData) {
+    if (!data && !config.vehicleDummyData) {
       fetchData();
     }
     if (showDropdown) {

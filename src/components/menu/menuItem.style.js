@@ -31,7 +31,7 @@ const MenuItemStyled = styled.li`
     }
   }
   ul {
-    transition: .8s;
+    transition: .3s;
     max-height: 0px;
     overflow: hidden;
     position: absolute;
