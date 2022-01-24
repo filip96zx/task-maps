@@ -41,7 +41,7 @@ export function DataDisplayContextProvider(props) {
     categories: categories,
     menuDetailsPopup: menuDetailsPupup,
     showVehiclesCategory: showVehiclesCategory,
-    setParkingsCategory: showParkingsCategory,
+    showParkingsCategory: showParkingsCategory,
     showPoiCategory: showPoiCategory,
     setDetailsPopup: setDetailsPopup,
     closeDetailsPopup: closeDetailsPopup

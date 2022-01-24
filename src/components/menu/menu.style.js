@@ -6,7 +6,7 @@ const MenuStyled = styled.header`
   font-size: 1.2rem;
   width:100vw;
   height: 3rem;
-  align-items:center;
+  align-items: center;
   background: ${styles.mainColorTransparent};
   menu {
     display: flex;

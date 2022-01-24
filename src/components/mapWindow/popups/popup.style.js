@@ -21,6 +21,7 @@ const PopupStyled = styled.div`
     color: ${styles.fontColorDarker4};
     padding: 0;
     text-decoration: underline;
+    cursor: pointer;
   }
 `;
 

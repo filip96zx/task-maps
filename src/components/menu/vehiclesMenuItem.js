@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { useVehicleDummyData } from '../../config/config';
+import DataDisplayContext from '../../globalState/dataDisplayContext';
 import VehiclesContext from '../../globalState/vehiclesContext';
 import MenuItemStyled from './menuItem.style';
 
 export default function VehiclesMenuItem() {
-  const { filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
+  const { vehicles, fetchData, filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
+  const {categories, showVehiclesCategory} = useContext(DataDisplayContext);
+  const [showDropdown, setShowDropdown] = useState(false);
 
 
   const iconsChangeHandler = (event) => {
@@ -22,37 +26,47 @@ export default function VehiclesMenuItem() {
     filterType(event.target.value);
   };
 
+  const handleShowCategory = () => {
+    showVehiclesCategory();
+    if (!vehicles && !useVehicleDummyData) {
+      fetchData();
+    }
+    if (showDropdown) {
+      setShowDropdown(false);
+    } else {
+      setShowDropdown(true);
+    }
+  };
+
   return (
     <MenuItemStyled>
-      <h3>Vehicles</h3>
-      <form>
-        <div className='form-control'>
+      <h3 onClick={handleShowCategory} className={categories.vehicles ? 'active ' : null}>Vehicles</h3>
+      <ul className={showDropdown ? 'show' : null}>
+        <li>
           <label htmlFor="icons">icons by</label>
           <select name="icons" id="icons" onChange={iconsChangeHandler}>
             <option value="default">default</option>
             <option value="battery">battery</option>
             <option value="status">status</option>
           </select>
-        </div>
-        <div className="form-control">
+        </li>
+        <li>
           <label htmlFor="status">status</label>
-          <select name="status" id="status" onChange={filterByStatusHandler}>
+          <select name="status" id="status" onChange={filterByStatusHandler} >
             <option value="all">all</option>
             <option value="available">available</option>
             <option value="inaccessible">inaccessible</option>
           </select>
-        </div>
-          
-        <div className="form-control">
+        </li>
+        <li>
           <label htmlFor="type">type</label>
           <select name="type" id="type" onChange={filterByTypeHandler}>
             <option value="all">all</option>
             <option value="truck">truck</option>
             <option value="car">car</option>
           </select>
-        </div>
-          
-        <div className="form-control">
+        </li>
+        <li>
           <label htmlFor="battery">battery %</label>
           <select name="battery" id="battery" onChange={filterByBatteryHandler}>
             <option value="0">all</option>
@@ -67,8 +81,8 @@ export default function VehiclesMenuItem() {
             <option value="20">{'>'}20</option>
             <option value="10">{'>'}10</option>
           </select>
-        </div>
-      </form>
+        </li>
+      </ul>
     </MenuItemStyled>
   );
 }
