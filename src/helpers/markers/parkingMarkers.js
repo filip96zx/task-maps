@@ -1,5 +1,5 @@
 import config from "../../config/config";
-import markerColor from './defaultMarkers';
+import { markerColor } from './defaultMarkers';
 
 export const setParkingHasFreeSpaceIcon = (hasFreeSpace) => {
   for (let icon of config.parkingMarkerConfig.spacesStatusIcons) {

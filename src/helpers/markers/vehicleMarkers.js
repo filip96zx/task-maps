@@ -1,12 +1,11 @@
 import config from '../../config/config';
-import markerColor from './defaultMarkers';
+import { markerColor } from './defaultMarkers';
 
 
 
 export const setVehicleStatusIcon = (status) => {
   for (let icon of config.vehicleMarkerConfig.statusIcons) {
     if (icon.status === status.toLowerCase() || icon.status === 'default') {
-
       return markerColor(icon.color);
     }
   }
