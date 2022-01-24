@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import config from '../../config/config';
+import { getXDummyParkings } from '../../dummy-data/parking';
 import { getXDummyVehicles } from '../../dummy-data/vehicle';
 
 const useFetchMapObj = (objName) => {
@@ -13,12 +14,19 @@ const useFetchMapObj = (objName) => {
 
   const fetchData = async () => {
     setIsLoading(true);
-    if (config.vehicleDummyData && objName ==='VEHICLE') {
+    if (config.vehicleDummyData && objName === 'VEHICLE') {
       const dummyVehicles = getXDummyVehicles(100);
       setData(dummyVehicles);
       setIsLoading(false);
       return;
     }
+    if (config.parkingDummyData && objName === 'PARKING') {
+      const dummyParkings = getXDummyParkings(100);
+      setData(dummyParkings);
+      setIsLoading(false);
+      return;
+    }
+
     if (objName) {
       try {
         const responseData = await fetch(config.apiURL + 'map?objectType=' + objName).then(response => {

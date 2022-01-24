@@ -15,32 +15,32 @@ export default function VehicleDetails(props) {
     <DetailsPopupStyled>
       <Button className="close-btn" onClick={closeDetailsPopup}>&times;</Button>
       <h2>{name}</h2>
-      {type &&
+      {type !== null &&
         <div className='data-row'>
           <h3>type:</h3><span>{typeNormalized}</span>
         </div>
       }
-      {color &&
+      {color !== null &&
         <div className='data-row'>
           <h3>color:</h3><span>{colorNormalized}</span>
         </div>
       }
-      {platesNumber &&
+      {platesNumber !== null &&
         <div className='data-row'>
           <h3>plates number:</h3><span>{platesNumber}</span>
         </div>
       }
-      {rangeKm &&
+      {rangeKm !== null &&
         <div className='data-row'>
           <h3>range km:</h3><span>{rangeKm}km</span>
         </div>
       }
-      {batteryLevelPct &&
+      {batteryLevelPct !== null &&
         <div className='data-row'>
           <h3>battery:</h3><span>{batteryLevelPct}%</span>
         </div>
       }
-      {status &&
+      {status !== null &&
         <div className='data-row--important'>
           <h3>status:</h3><span>{statusNormalized}</span>
         </div>
