@@ -6,7 +6,7 @@ export const markerColor = (color) => {
     fillColor: color,
     fillOpacity: 0.8,
     strokeWeight: 2,
-    strokeColor:'rgba(50,50,50,0.8)',
+    strokeColor: 'rgba(50,50,50,0.8)',
     rotation: 0,
     scale: config.iconScale,
   };

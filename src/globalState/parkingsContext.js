@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect} from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import useFetchMapObj from '../helpers/api/apiFetchMapObj';
 
 const ParkingsContext = createContext({

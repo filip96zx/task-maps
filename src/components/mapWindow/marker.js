@@ -1,9 +1,11 @@
 import { Marker as GoogleMarker } from "@react-google-maps/api";
 import { useRef, useState, useContext } from 'react';
-import { setVehicleStatusIcon, setVehicleBatteryIcon} from '../../helpers/markers/vehicleMarkers';
+import { setVehicleStatusIcon, setVehicleBatteryIcon } from '../../helpers/markers/vehicleMarkers';
+import { setParkingHasFreeSpaceIcon, setParkingsHasChargersIcon } from '../../helpers/markers/parkingMarkers';
 import setDefaultMarkerColor from '../../helpers/markers/defaultMarkers';
 import InfoWindow from "./infoWindow";
 import VehiclesContext from "../../globalState/vehiclesContext";
+import ParkingsContext from "../../globalState/parkingsContext";
 
 
 function Marker(props) {
@@ -12,6 +14,7 @@ function Marker(props) {
   const markerRef = useRef();
   const discriminatorNormalized = data.discriminator.toLowerCase();
   const { icons: vehiclesIcons } = useContext(VehiclesContext);
+  const { icons: parkingsContext } = useContext(ParkingsContext);
 
   const convertLocation = (location) => {
     return {
@@ -35,12 +38,16 @@ function Marker(props) {
       icon = setVehicleBatteryIcon(data.batteryLevelPct);
     } else if ('status' === vehiclesIcons) {
       icon = setVehicleStatusIcon(data.status);
-    } else {
-      icon = setDefaultMarkerColor();
     }
   } if (discriminatorNormalized === 'parking') {
-    
+    if ('spaces' === parkingsContext) {
+      icon = setParkingHasFreeSpaceIcon(data.availableSpacesCount > 0);
+    } else if ('chargers' === parkingsContext) {
+      icon = setParkingsHasChargersIcon(data.chargers?.length > 0);
+    }
   }
+
+  if (!icon) icon = setDefaultMarkerColor();
 
   return (
     <GoogleMarker ref={markerRef} onClick={openInfoWindowHandler} position={convertLocation(data.location)} clusterer={clusterer} icon={icon}>

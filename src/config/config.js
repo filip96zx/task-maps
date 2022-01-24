@@ -46,6 +46,29 @@ const config = {
         color: 'rgb(10, 123, 252)'
       }
     ]
+  },
+  parkingMarkerConfig: {
+    spacesStatusIcons: [
+      {
+        freeSpaces: true,
+        color: 'rgba(14,176,114,255)'
+      },
+      {
+        freeSpaces: false,
+        color: 'darkred'
+      },
+    ],
+    chargersStatusIcons: [
+      {
+        charger: true,
+        color: 'rgba(14,176,114,255)'
+      },
+      {
+        charger: false,
+        color: 'darkred'
+      },
+    ]
+
   }
 }
 
