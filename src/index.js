@@ -5,14 +5,17 @@ import reportWebVitals from './reportWebVitals';
 import { VehiclesContextProvider } from './globalState/vehiclesContext';
 import { DataDisplayContextProvider } from './globalState/dataDisplayContext';
 import { GlobalStyles } from './globalStyles/globalStyles';
+import { ParkingsContextProvider } from './globalState/parkingsContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <DataDisplayContextProvider>
-      <VehiclesContextProvider>
-        <GlobalStyles/>
-        <App />
-      </VehiclesContextProvider>
+      <ParkingsContextProvider>
+        <VehiclesContextProvider>
+          <GlobalStyles />
+          <App />
+        </VehiclesContextProvider>
+      </ParkingsContextProvider>
     </DataDisplayContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

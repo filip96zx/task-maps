@@ -1,7 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
-import { apiURL } from '../config/config';
-import useFetchMapObj from '../helpers/apiFetchMapObj';
+import React, { createContext, useState, useEffect} from 'react';
+import useFetchMapObj from '../helpers/api/apiFetchMapObj';
 
 const ParkingsContext = createContext({
   data: [],
@@ -14,7 +12,9 @@ const ParkingsContext = createContext({
   error: null
 });
 
-export default function ParkingsContextProvider(props) {
+export default ParkingsContext;
+
+export function ParkingsContextProvider(props) {
   const [data, setData] = useState([]);
   const { data: fetchedData, fetchData, error, isLoading } = useFetchMapObj('PARKING');
 
@@ -77,7 +77,7 @@ export default function ParkingsContextProvider(props) {
   };
 
   const setIconsBy = (iconsBy) => {
-   const normalizedIconsBy = iconsBy.toLowerCase();
+    const normalizedIconsBy = iconsBy.toLowerCase();
 
   };
 

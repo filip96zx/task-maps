@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { mapContainerStyle, googleMapsApiKey } from '../../config/config';
+import config from '../../config/config';
 
 
 const center = { lat: 52.31434, lng: 19.66137 };
@@ -8,7 +8,7 @@ const center = { lat: 52.31434, lng: 19.66137 };
 function Map(props) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: googleMapsApiKey
+    googleMapsApiKey: config.googleMapsApiKey
   });
 
   const onLoad = useCallback(function callback(map) {
@@ -25,7 +25,7 @@ function Map(props) {
 
   return isLoaded ? (
     <GoogleMap
-      mapContainerStyle={mapContainerStyle}
+      mapContainerStyle={config.mapContainerStyle}
       center={center}
       zoom={6}
       onLoad={onLoad}

@@ -1,6 +1,7 @@
 import { Marker as GoogleMarker } from "@react-google-maps/api";
 import { useRef, useState, useContext } from 'react';
-import { setVehicleStatusIcon, setVehicleBatteryIcon, setVehicleDefaultIcon } from '../../helpers/vehicleMarkers';
+import { setVehicleStatusIcon, setVehicleBatteryIcon} from '../../helpers/markers/vehicleMarkers';
+import setDefaultMarkerColor from '../../helpers/markers/defaultMarkers';
 import InfoWindow from "./infoWindow";
 import VehiclesContext from "../../globalState/vehiclesContext";
 
@@ -28,22 +29,24 @@ function Marker(props) {
   };
 
 
+  let icon;
   if (discriminatorNormalized === 'vehicle') {
-    let icon;
-
     if ('battery' === vehiclesIcons) {
       icon = setVehicleBatteryIcon(data.batteryLevelPct);
     } else if ('status' === vehiclesIcons) {
       icon = setVehicleStatusIcon(data.status);
     } else {
-      icon = setVehicleDefaultIcon();
+      icon = setDefaultMarkerColor();
     }
-    return (
-      <GoogleMarker ref={markerRef} onClick={openInfoWindowHandler} position={convertLocation(data.location)} clusterer={clusterer} icon={icon}>
-        {showInfoWindow && <InfoWindow onCloseClick={closeInfoWindowHandler} type={discriminatorNormalized} anchor={markerRef.current} data={data} />}
-      </GoogleMarker>
-    );
+  } if (discriminatorNormalized === 'parking') {
+    
   }
+
+  return (
+    <GoogleMarker ref={markerRef} onClick={openInfoWindowHandler} position={convertLocation(data.location)} clusterer={clusterer} icon={icon}>
+      {showInfoWindow && <InfoWindow onCloseClick={closeInfoWindowHandler} type={discriminatorNormalized} anchor={markerRef.current} data={data} />}
+    </GoogleMarker>
+  );
 }
 
 export default Marker;
