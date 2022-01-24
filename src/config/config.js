@@ -1,6 +1,6 @@
 import styles from '../globalStyles/variables';
 
-export const useVehicleDummyData = true;
+export const vehicleDummyData = true;
 
 export const mapContainerStyle = {
   width: '100%',
@@ -8,6 +8,7 @@ export const mapContainerStyle = {
 };
 
 export const googleMapsApiKey = "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk";
+export const apiURL = 'https://dev.vozilla.pl/api-client-portal/';
 
 export const vehicleMarkerConfig = {
   defaultIconColor: styles.secondaryColor,

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useVehicleDummyData } from '../../config/config';
+import { vehicleDummyData } from '../../config/config';
 import DataDisplayContext from '../../globalState/dataDisplayContext';
 import VehiclesContext from '../../globalState/vehiclesContext';
 import MenuItemStyled from './menuItem.style';
@@ -32,7 +32,7 @@ export default function VehiclesMenuItem() {
 
   const handleShowCategory = () => {
     showVehiclesCategory();
-    if (!vehicles && !useVehicleDummyData) {
+    if (!vehicles && !vehicleDummyData) {
       fetchData();
     }
     if (showDropdown) {

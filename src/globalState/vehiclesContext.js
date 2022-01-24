@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { useVehicleDummyData } from '../config/config';
-import { getXDummyVehicles } from '../dummy-data/vehicle';
+import useFetchMapObj from '../helpers/apiFetchMapObj';
+
 
 const VehiclesContext = createContext({
   data: [],
@@ -16,9 +16,8 @@ const VehiclesContext = createContext({
 
 export function VehiclesContextProvider(props) {
   const [data, setData] = useState([]);
-  const [fetchedData, setFetchedData] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const {data: fetchedData, fetchData, error, isLoading} = useFetchMapObj('VEHICLE');
+
 
   const [icons, setIcons] = useState('default');
   const [filters, setFilters] = useState([
@@ -27,15 +26,7 @@ export function VehiclesContextProvider(props) {
     { property: 'type', value: 'all' },
   ]);
 
-  useEffect(() => {
-    if (useVehicleDummyData) {
-      const dummyVehicles = getXDummyVehicles(100);
-      setFetchedData(dummyVehicles);
-      setIsLoading(false);
-    } else {
-      fetchData();
-    }
-  }, []);
+
 
   useEffect(() => {
     let filterData = [...fetchedData];
@@ -56,27 +47,6 @@ export function VehiclesContextProvider(props) {
   }, [filters, fetchedData]);
 
 
-
-
-  const fetchData = async () => {
-    setIsLoading(true);
-    try {
-      const data = await fetch('https://dev.vozilla.pl/api-client-portal/map?objectType=VEHICLE').then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw Error('Error !');
-        }
-      });
-      const vehiclesList = data.objects.map(item => item);
-      setFetchedData(vehiclesList);
-      setError(null);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const filterStatus = (status) => {
     const statusNormalized = status.toLowerCase();
