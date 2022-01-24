@@ -5,13 +5,17 @@ const MenuStyled = styled.header`
   display: flex;
   font-size: 1.2rem;
   width:100vw;
-  height: 3rem;
   align-items: center;
   background: ${styles.mainColorTransparent};
+  margin: 0;
+  padding: 0;
+  height: 3rem;
   menu {
     display: flex;
     list-style: none;
     margin: 0;
+    padding: 0;
+    height: 3rem;
   }
 `;
 

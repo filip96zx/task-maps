@@ -13,6 +13,7 @@ const DetailsPopupStyled = styled.div`
   border-radius: 0.5rem;
   border: 2px solid ${styles.secondaryColor};
   box-shadow: 0 0 3px 1px ${styles.mainColorTransparent2}, 2px 2px 3px 0px ${styles.mainColorTransparent2};
+  z-index: 5;
   h2 {
     text-align: center;
     border-bottom: 1px solid ${styles.secondaryColor};

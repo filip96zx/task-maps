@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useVehicleDummyData } from '../../config/config';
 import DataDisplayContext from '../../globalState/dataDisplayContext';
 import VehiclesContext from '../../globalState/vehiclesContext';
@@ -6,8 +6,12 @@ import MenuItemStyled from './menuItem.style';
 
 export default function VehiclesMenuItem() {
   const { vehicles, fetchData, filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
-  const {categories, showVehiclesCategory} = useContext(DataDisplayContext);
+  const { categories, showVehiclesCategory } = useContext(DataDisplayContext);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => { 
+    if(!categories.vehicles) setShowDropdown(false);
+  }, [categories.vehicles]);
 
 
   const iconsChangeHandler = (event) => {
@@ -41,7 +45,7 @@ export default function VehiclesMenuItem() {
   return (
     <MenuItemStyled>
       <h3 onClick={handleShowCategory} className={categories.vehicles ? 'active ' : null}>Vehicles</h3>
-      <ul className={showDropdown ? 'show' : null}>
+      <ul className={showDropdown  ? 'show' : null}>
         <li>
           <label htmlFor="icons">icons by</label>
           <select name="icons" id="icons" onChange={iconsChangeHandler}>

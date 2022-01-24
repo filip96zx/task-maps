@@ -1,3 +1,5 @@
+import styles from '../globalStyles/variables';
+
 export const useVehicleDummyData = true;
 
 export const mapContainerStyle = {
@@ -8,12 +10,12 @@ export const mapContainerStyle = {
 export const googleMapsApiKey = "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk";
 
 export const vehicleMarkerConfig = {
-  defaultIconColor:'rgb(10, 123, 252)',
+  defaultIconColor: styles.secondaryColor,
   iconScale: 1,
   batteryLevelIcons: [
     {
       batteryPercent: 85,
-      color: 'green'
+      color: styles.secondaryColor
     },
     {
       batteryPercent: 65,
@@ -32,7 +34,7 @@ export const vehicleMarkerConfig = {
   statusIcons: [
     {
       status: 'available',
-      color: 'green'
+      color: styles.secondaryColor
     },
     {
       status: 'inaccessible',
