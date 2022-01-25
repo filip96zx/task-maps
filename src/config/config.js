@@ -1,9 +1,9 @@
 import styles from '../globalStyles/variables';
 
 const config = {
-  vehicleDummyData: true, // if true use random generated data else fetch from api
-  parkingDummyData: true, // if true use random generated data else fetch from api
-  poiDummyData: true,  // if true use random generated data else fetch from api
+  vehicleDummyData: false, // if true use random generated data else fetch from api
+  parkingDummyData: false, // if true use random generated data else fetch from api
+  poiDummyData: false,  // if true use random generated data else fetch from api
   apiURL: 'https://dev.vozilla.pl/api-client-portal/',
   googleMapsApiKey: "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk",
   //map start config

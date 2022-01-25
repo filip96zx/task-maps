@@ -6,15 +6,17 @@ import MenuStyled from './menu.style';
 import Spinner from '../ui/spinner.style';
 import VehiclesContext from '../../globalState/vehiclesContext';
 import ParkingsContext from '../../globalState/parkingsContext';
+import PoiContext from '../../globalState/poiContext';
 
 
 export default function Menu() {
   const { isLoading: vIsLoading } = useContext(VehiclesContext);
   const { isLoading: pIsLoading } = useContext(ParkingsContext);
+  const { isLoading: poiIsLoading } = useContext(PoiContext);
 
 
 
-  const loader = (vIsLoading || pIsLoading) ? <Spinner /> : null;
+  const loader = (vIsLoading || pIsLoading || poiIsLoading) ? <Spinner /> : null;
 
   return (
     <MenuStyled>
