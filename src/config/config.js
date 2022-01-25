@@ -2,15 +2,22 @@ import styles from '../globalStyles/variables';
 
 const config = {
   vehicleDummyData: true,
-  parkingDummyData: true,
+  parkingDummyData: false,
   poiDummyData: false,
   apiURL: 'https://dev.vozilla.pl/api-client-portal/',
   googleMapsApiKey: "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk",
+  //map start config
+  mapCenter: { lat: 0, lng: 0 }, // <-not working as expected
+  mapZoomLevel: 7,
+  mapStartingBound:{
+    northEastCorner: { lat: 53.711824285745936, lng: 13.812720459480817 },
+    southWestCorner:  { lat: 50.29074828557042, lng: 24.048221304405697 }
+  },
   mapContainerStyle: {
     width: '100%',
     height: '100%',
   },
-  //// markers settings
+  // markers settings
   defaultMarkerColor: styles.secondaryColor,
   iconScale: 1,
   vehicleMarkerConfig: {

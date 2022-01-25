@@ -1,18 +1,22 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import config from '../../config/config';
+import Spinner from '../ui/spinner.style';
 
 
-const center = { lat: 52.31434, lng: 19.66137 };
 
 function Map(props) {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: config.googleMapsApiKey
   });
+  const [map, setMap] = useState(null);
 
   const onLoad = useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
+    const bounds = new window.google.maps.LatLngBounds(
+      config.mapStartingBound.northEastCorner,
+      config.mapStartingBound.southWestCorner
+    );
     map.fitBounds(bounds);
     setMap(map);
   }, []);
@@ -21,19 +25,20 @@ function Map(props) {
     setMap(null);
   }, []);
 
-  const [map, setMap] = useState(null);
+
+
 
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={config.mapContainerStyle}
-      center={center}
-      zoom={6}
+      center={config.mapCenter}
+      zoom={config.mapZoomLevel}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
       {props.children}
     </GoogleMap>
-  ) : <><span>Loading...</span></>;
+  ) : <><Spinner /></>;
 }
 
 export default React.memo(Map);
