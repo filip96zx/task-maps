@@ -33,6 +33,7 @@ const MenuItemStyled = styled.li`
   ul {
     transition: .3s;
     max-height: 0px;
+    width: 100%;
     overflow: hidden;
     position: absolute;
     top: 3rem;

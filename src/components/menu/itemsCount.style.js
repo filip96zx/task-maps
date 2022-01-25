@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const ItemsCountStyled = styled.li`
-  padding: 4px 0;
   display: flex;
+  padding: 4px 0;
+  width: 100%;
   span {
     width: 100%;
     text-align: right;
