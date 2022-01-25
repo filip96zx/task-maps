@@ -2,16 +2,16 @@ import styles from '../globalStyles/variables';
 
 const config = {
   vehicleDummyData: true, // if true use random generated data else fetch from api
-  parkingDummyData: false, // if true use random generated data else fetch from api
-  poiDummyData: false,
+  parkingDummyData: true, // if true use random generated data else fetch from api
+  poiDummyData: true,  // if true use random generated data else fetch from api
   apiURL: 'https://dev.vozilla.pl/api-client-portal/',
   googleMapsApiKey: "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk",
   //map start config
   mapCenter: { lat: 0, lng: 0 }, // <-not working as expected
   mapZoomLevel: 7,
-  mapStartingBound:{
+  mapStartingBound: {
     northEastCorner: { lat: 53.711824285745936, lng: 13.812720459480817 },  // <- this works for set starting bound
-    southWestCorner:  { lat: 50.29074828557042, lng: 24.048221304405697 }
+    southWestCorner: { lat: 50.29074828557042, lng: 24.048221304405697 }
   },
   mapContainerStyle: {
     width: '100%',
@@ -79,7 +79,7 @@ const config = {
     ]
 
   }
-}
+};
 
-export default config
+export default config;
 

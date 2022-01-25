@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import config from '../../config/config';
 import { getXDummyParkings } from '../../dummy-data/parking';
+import { getXDummyPoi } from '../../dummy-data/poi';
 import { getXDummyVehicles } from '../../dummy-data/vehicle';
 
 const useFetchMapObj = (objName) => {
@@ -21,11 +22,18 @@ const useFetchMapObj = (objName) => {
       return;
     }
     if (config.parkingDummyData && objName === 'PARKING') {
-      const dummyParkings = getXDummyParkings(100);
+      const dummyParkings = getXDummyParkings(120);
       setData(dummyParkings);
       setIsLoading(false);
       return;
     }
+    if (config.parkingDummyData && objName === 'POI') {
+      const dummyPoi = getXDummyPoi(70);
+      setData(dummyPoi);
+      setIsLoading(false);
+      return;
+    }
+
 
     if (objName) {
       try {
