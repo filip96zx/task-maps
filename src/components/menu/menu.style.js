@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import styles from "../../globalStyles/variables";
+
+const setOvfVisible = keyframes`
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: visible;
+  }
+`;
 
 const MenuStyled = styled.header`
   display: flex;
@@ -10,6 +19,9 @@ const MenuStyled = styled.header`
   margin: 0;
   padding: 0;
   height: 3rem;
+  .mobile-btn-wrapper {
+    display: none;
+  }
   .loader-container{
     width: 65px;
     height: 100%;
@@ -25,7 +37,9 @@ const MenuStyled = styled.header`
     height: 3rem;
   }
   @media (max-width: 800px){
-    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color:  transparent;
+    background: ${styles.mainColorTransparent2};
     height: fit-content;
     flex-direction: column;
     justify-items: center;
@@ -38,13 +52,31 @@ const MenuStyled = styled.header`
       margin: 15px;
       z-index: 3;
     }
+    .mobile-btn-wrapper{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      height: 3rem;
+      padding: 3px 10px;
+    }
     menu {
-      background: red;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s;
+      position: fixed;
+      top: 3rem;
+      &.show {
+        transition: 0.3s;
+        max-height: 300px;
+        animation: ${setOvfVisible} 0s 0.3s linear forwards;
+      }
+
+      z-index: 1;
       flex-direction: column;
       height: fit-content;
       width: 100wv;
       li {
-        background: ${styles.mainColor};
+        background: ${styles.mainColorTransparent2};
         padding: 10px;
         width: 100vw;
         display: flex;
@@ -55,7 +87,7 @@ const MenuStyled = styled.header`
         }
         ul {
           li {
-            padding: 0 2px !important;
+            padding: 5px 0px !important;
           }
           label, select {
             width: 200px;

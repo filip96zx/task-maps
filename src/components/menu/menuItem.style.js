@@ -22,7 +22,7 @@ const MenuItemStyled = styled.li`
       width: 100%;
       padding-top: 10px;
       border-bottom: 2px solid ${styles.secondaryColor};
-      transform: translateX(-100%);
+      transform: translateX(-101%);
     }
     &.active {
       :after{
@@ -40,7 +40,7 @@ const MenuItemStyled = styled.li`
     top: 3rem;
     left: 0;
     background: ${styles.mainColorTransparent2};
-    z-index: 2;
+    z-index: 3;
     list-style: none;
     padding: 0 2px !important;
     box-shadow: 1px 1px 3px 0 ${styles.mainColorTransparent};

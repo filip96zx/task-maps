@@ -5,14 +5,14 @@ import VehiclesContext from '../../globalState/vehiclesContext';
 import ItemsCount from './itemsCount';
 import MenuItemStyled from './menuItem.style';
 
-export default function VehiclesMenuItem() {
+export default function VehiclesMenuItem(props) {
   const { data, fetchData, filterStatus, filterBattery, filterType, setIconsBy } = useContext(VehiclesContext);
   const { categories, showVehiclesCategory } = useContext(DataDisplayContext);
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    if (!categories.vehicles) setShowDropdown(false);
-  }, [categories.vehicles]);
+    if (!categories.vehicles || !props.showMenu) setShowDropdown(false);
+  }, [categories.vehicles, props.showMenu]);
 
 
   const iconsChangeHandler = (event) => {

@@ -9,6 +9,9 @@ const ButtonStyled = styled.button`
   padding: 0 0.3rem;
   font-size: 1.2rem;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;;
   :hover {
     color:${styles.fontColorDarker};

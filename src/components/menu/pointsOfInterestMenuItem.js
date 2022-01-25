@@ -11,8 +11,8 @@ export default function PointsOfInterestMenuItem(props) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    if (!categories.poi) setShowDropdown(false);
-  }, [categories.poi]);
+    if (!categories.poi || !props.showMenu) setShowDropdown(false);
+  }, [categories.poi, props.showMenu]);
 
   const handleShowCategory = () => {
     showPoiCategory();
