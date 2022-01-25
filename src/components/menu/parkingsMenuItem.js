@@ -3,6 +3,7 @@ import DataDisplayContext from '../../globalState/dataDisplayContext';
 import MenuItemStyled from './menuItem.style';
 import ParkingsContext from '../../globalState/parkingsContext';
 import config from '../../config/config';
+import ItemsCount from './itemsCount';
 
 export default function ParkingsMenuItem(s) {
   const { data, fetchData, filterFreeSpaces, filterChargers, setIconsBy } = useContext(ParkingsContext);
@@ -41,6 +42,7 @@ export default function ParkingsMenuItem(s) {
     <MenuItemStyled>
       <h3 onClick={handleShowCategory} className={categories.parkings ? 'active' : null}>Parkings</h3>
       <ul className={showDropdown ? 'show' : null}>
+        <ItemsCount count={data.length} />
         <li>
           <label htmlFor="icons">icons by</label>
           <select name="icons" id="icons" onChange={iconsChangeHandler}>
