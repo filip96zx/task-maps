@@ -11,8 +11,12 @@ export default function ParkingsMenuItem(props) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    if (!categories.parkings || !props.showMenu) setShowDropdown(false);
-  }, [categories.parkings, props.showMenu]);
+    if (!categories.parkings) setShowDropdown(false);
+  }, [categories.parkings]);
+
+  useEffect(() => {
+    if (!props.showMenu) setShowDropdown(false);
+  }, [props.showMenu]);
 
   const handleShowCategory = () => {
     showParkingsCategory();

@@ -11,9 +11,12 @@ export default function VehiclesMenuItem(props) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    if (!categories.vehicles || !props.showMenu) setShowDropdown(false);
-  }, [categories.vehicles, props.showMenu]);
+    if (!categories.vehicles) setShowDropdown(false);
+  }, [categories.vehicles]);
 
+  useEffect(() => {
+    if (!props.showMenu) setShowDropdown(false);
+  }, [props.showMenu]);
 
   const iconsChangeHandler = (event) => {
     setIconsBy(event.target.value);
