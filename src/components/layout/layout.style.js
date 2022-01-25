@@ -7,6 +7,7 @@ const LayoutStyled = styled.div`
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   overflow: hidden;
   color: ${styles.fontColor};
   :before {
@@ -24,9 +25,6 @@ const LayoutStyled = styled.div`
     position: relative;
     flex-grow: 1;
     margin: 1rem;
-    height: 90%;
-    .map-ctn {
-    }
     .spinner-container{
       display: flex;
       width: 100%;

@@ -13,6 +13,7 @@ const MenuItemStyled = styled.li`
     padding: 1px 8px;
     cursor: pointer;
     overflow: hidden;
+
     :after{
       content: "";
       position: absolute;
@@ -41,7 +42,8 @@ const MenuItemStyled = styled.li`
     background: ${styles.mainColorTransparent2};
     z-index: 2;
     list-style: none;
-    padding: 0 2px;
+    padding: 0 2px !important;
+    box-shadow: 1px 1px 3px 0 ${styles.mainColorTransparent};
     input, select {
       width: 100%;
       background: ${styles.mainColorTransparent};
@@ -55,7 +57,9 @@ const MenuItemStyled = styled.li`
     label{
       margin-left: 2px;
     }
-    box-shadow: 1px 1px 3px 0 ${styles.mainColorTransparent};
+    li {
+      padding: 1px;
+    }
     &.show {
       transition: .8s;
       max-height: 300px;

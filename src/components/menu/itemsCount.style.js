@@ -9,6 +9,10 @@ const ItemsCountStyled = styled.li`
     text-align: right;
     margin-right: 3px;
   }
+  @media (max-width: 800px){
+    display: inline-block !important;
+    text-align: center;
+  }
 `;
 
 export default ItemsCountStyled;
