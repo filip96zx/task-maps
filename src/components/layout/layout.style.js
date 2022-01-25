@@ -25,6 +25,15 @@ const LayoutStyled = styled.div`
     flex-grow: 1;
     margin: 1rem;
     height: 90%;
+    .map-ctn {
+    }
+    .spinner-container{
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
   }
 `;
 

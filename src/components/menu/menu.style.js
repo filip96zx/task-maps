@@ -10,6 +10,13 @@ const MenuStyled = styled.header`
   margin: 0;
   padding: 0;
   height: 3rem;
+  .loader-container{
+    width: 65px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   menu {
     display: flex;
     list-style: none;

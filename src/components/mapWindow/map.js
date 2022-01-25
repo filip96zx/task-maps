@@ -38,7 +38,7 @@ function Map(props) {
     >
       {props.children}
     </GoogleMap>
-  ) : <><Spinner /></>;
+  ) : <div className="spinner-container"><Spinner size={50} /></div>;
 }
 
 export default React.memo(Map);
