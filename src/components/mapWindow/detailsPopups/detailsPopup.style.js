@@ -14,6 +14,8 @@ const DetailsPopupStyled = styled.div`
   border: 2px solid ${styles.secondaryColor};
   box-shadow: 0 0 3px 1px ${styles.mainColorTransparent2}, 2px 2px 3px 0px ${styles.mainColorTransparent2};
   z-index: 5;
+  min-width: 300px;
+  max-width: 340px;
   h2 {
     text-align: center;
     border-bottom: 1px solid ${styles.secondaryColor};
@@ -37,9 +39,11 @@ const DetailsPopupStyled = styled.div`
   }
   .data-row {
     margin:5px 0;
+    display: flex;
+    border-bottom: 3px solid rgba(50,50,50,0.4);
     h3{
-      display:inline-block;
       margin-right:5px;
+      white-space: nowrap;
     }
     &--important {
       font-size: calc(110%);
@@ -49,6 +53,12 @@ const DetailsPopupStyled = styled.div`
         display:inline-block;
         margin-right:5px;
       }
+    }
+    span {
+      display: inline-block;
+      word-wrap: break-word;
+      text-align: right;
+      width: 100%;
     }
   }
 `;

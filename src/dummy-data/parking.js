@@ -18,7 +18,7 @@ class Parking {
     this.name = "Bałuckiego";
     this.description = "Bałuckiego";
     this.location = {
-      latitude: 51.101935 + (Math.random() - 0.5 / 3),
+      latitude: 51.101935 + (Math.random() - 0.5 / 1.5),
       longitude: 17.02744 + (Math.random() - 0.5 / 4)
     };
     this.metadata = null;

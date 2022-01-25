@@ -6,14 +6,17 @@ import { VehiclesContextProvider } from './globalState/vehiclesContext';
 import { DataDisplayContextProvider } from './globalState/dataDisplayContext';
 import { GlobalStyles } from './globalStyles/globalStyles';
 import { ParkingsContextProvider } from './globalState/parkingsContext';
+import { PoiContextProvider } from './globalState/poiContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <DataDisplayContextProvider>
       <ParkingsContextProvider>
         <VehiclesContextProvider>
-          <GlobalStyles />
-          <App />
+          <PoiContextProvider>
+            <GlobalStyles />
+            <App />
+          </PoiContextProvider>
         </VehiclesContextProvider>
       </ParkingsContextProvider>
     </DataDisplayContextProvider>

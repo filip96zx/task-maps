@@ -2,6 +2,7 @@ import React from 'react';
 import { InfoWindow as GoogleInfoWindow } from '@react-google-maps/api';
 import VehiclePopup from './popups/vehiclePopup';
 import ParkingPopup from './popups/parkingPopup';
+import PoiPopup from './popups/poiPopup';
 
 export default function InfoWindow(props) {
   const { onCloseClick, anchor, data, type } = props;
@@ -10,17 +11,19 @@ export default function InfoWindow(props) {
 
   if (type === 'vehicle') {
     popup = <VehiclePopup data={data} />;
-  } else if(type === 'parking') {
+  } else if (type === 'parking') {
     popup = <ParkingPopup data={data} />;
+  } else if (type === 'poi') {
+    popup = <PoiPopup data={data} />;
   } else {
-    popup = <span>discriminatory type not handled</span>
+    popup = <span style={{ color: 'black' }}>Can not load data.</span>;
   }
 
 
-    return (
-      <GoogleInfoWindow onCloseClick={onCloseClick} anchor={anchor}>
-        {popup}
-      </GoogleInfoWindow>
-    );
-  
+  return (
+    <GoogleInfoWindow onCloseClick={onCloseClick} anchor={anchor}>
+      {popup}
+    </GoogleInfoWindow>
+  );
+
 }

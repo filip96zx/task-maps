@@ -27,8 +27,8 @@ class Vehicle {
     this.name = "Enigma Python Van";
     this.description = null;
     this.location = {
-      latitude: 52.1935161702226 + (Math.random() - 0.5/3),
-      longitude: 20.9304286193486 + (Math.random() - 0.5/4)
+      latitude: 51.101935 + (Math.random() - 0.5 / 1.5),
+      longitude: 17.02744 + (Math.random() - 0.5 / 4)
     };
     this.metadata = null;
   }
