@@ -11,7 +11,17 @@ const rotate = keyframes`
 
 `;
 
+const show = keyframes`
+form{
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
 const Spinner = styled.div`
+  opacity: 0;
   width: ${(props) => props.size ? props.size + 'px' : '30px'};
   height: ${(props) => props.size ? props.size + 'px' : '30px'};
   border-radius: 50%;
@@ -22,7 +32,7 @@ const Spinner = styled.div`
   inset 0 ${(props) => props.size ? Math.floor(props.size / 15) + 'px' : '2px'}  ${(props) => props.size ? Math.floor(props.size / 15) + 'px' : '2px'} ${styles.secondaryColorTransparent2},
   0 ${(props) => props.size ? Math.floor(props.size / 10) + 'px' : '3px'}  ${(props) => props.size ? Math.floor(props.size / 7) + 'px' : '4px'} ${styles.secondaryColorTransparent2},
   0 ${(props) => props.size ? '-' + Math.floor(props.size / 10) + 'px' : '-3px'}  ${(props) => props.size ? Math.floor(props.size / 7) + 'px' : '4px'} ${styles.secondaryColorTransparent2};
-  animation: ${rotate} 2s linear infinite ;
+  animation: ${rotate} 2s linear infinite, ${show} .2s linear forwards ;
 `;
 
 export default Spinner;

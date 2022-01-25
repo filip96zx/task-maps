@@ -33,7 +33,7 @@ export default function VehiclesMenuItem() {
 
   const handleShowCategory = () => {
     showVehiclesCategory();
-    if (!data && !config.vehicleDummyData) {
+    if (!categories.vehicles && !config.vehicleDummyData) {
       fetchData();
     }
     if (showDropdown) {
@@ -47,7 +47,7 @@ export default function VehiclesMenuItem() {
     <MenuItemStyled>
       <h3 onClick={handleShowCategory} className={categories.vehicles ? 'active ' : null}>Vehicles</h3>
       <ul className={showDropdown ? 'show' : null}>
-        <ItemsCount count={data.length}/>
+        <ItemsCount count={data.length} />
         <li>
           <label htmlFor="icons">icons by</label>
           <select name="icons" id="icons" onChange={iconsChangeHandler}>

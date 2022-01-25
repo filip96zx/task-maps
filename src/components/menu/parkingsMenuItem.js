@@ -16,7 +16,7 @@ export default function ParkingsMenuItem(s) {
 
   const handleShowCategory = () => {
     showParkingsCategory();
-    if (!data && !config.parkingDummyData) {
+    if (!categories.parkings && !config.parkingDummyData) {
       fetchData();
     }
     if (showDropdown) {
