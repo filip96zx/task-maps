@@ -13,7 +13,7 @@ function Marker({clusterer, data}) {
   const markerRef = useRef();
   const discriminatorNormalized = data.discriminator.toLowerCase();
   const { icons: vehiclesIcons } = useContext(VehiclesContext);
-  const { icons: parkingsContext } = useContext(ParkingsContext);
+  const { icons: parkingsIcons } = useContext(ParkingsContext);
 
   const convertLocation = (location) => {
     return {
@@ -39,9 +39,9 @@ function Marker({clusterer, data}) {
       icon = setVehicleStatusIcon(data.status);
     }
   } if (discriminatorNormalized === 'parking') {
-    if ('spaces' === parkingsContext) {
+    if ('spaces' === parkingsIcons) {
       icon = setParkingHasFreeSpaceIcon(data.availableSpacesCount > 0);
-    } else if ('chargers' === parkingsContext) {
+    } else if ('chargers' === parkingsIcons) {
       icon = setParkingsHasChargersIcon(data.chargers?.length > 0);
     }
   }
