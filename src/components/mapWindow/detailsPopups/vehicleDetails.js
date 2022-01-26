@@ -3,10 +3,10 @@ import DataDisplayContext from '../../../globalState/dataDisplayContext';
 import Button from '../../ui/button';
 import DetailsPopupStyled from './detailsPopup.style';
 
-export default function VehicleDetails(props) {
+export default function VehicleDetails({ data }) {
   const { closeDetailsPopup } = useContext(DataDisplayContext);
 
-  const { name, platesNumber, rangeKm, batteryLevelPct, type, status, color } = props.data;
+  const { name, platesNumber, rangeKm, batteryLevelPct, type, status, color } = data;
   const typeNormalized = type.toLowerCase();
   const statusNormalized = status.toLowerCase();
   const colorNormalized = color.toLowerCase();

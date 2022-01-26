@@ -3,11 +3,11 @@ import { MarkerClusterer } from '@react-google-maps/api';
 import Marker from './marker';
 
 
-function MarkerCluster(props) {
+function MarkerCluster({items}) {
 
   return (
     <MarkerClusterer>
-      {(clusterer) => props.items.map(marker => <Marker key={marker.id} data={marker} clusterer={clusterer} />)}
+      {(clusterer) => items.map(marker => <Marker key={marker.id} data={marker} clusterer={clusterer} />)}
     </MarkerClusterer>
   );
 

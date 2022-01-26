@@ -3,14 +3,13 @@ import DataDisplayContext from '../../../globalState/dataDisplayContext';
 import Button from '../../ui/button';
 import DetailsPopupStyled from './detailsPopup.style';
 
-export default function PoiDetails(props) {
+export default function PoiDetails({ data }) {
   const { closeDetailsPopup } = useContext(DataDisplayContext);
-  const { name, description, category } = props.data;
-  const { street, house, city } = props.data.address;
+  const { name, description, category } = data;
+  const { street, house, city } = data.address;
 
   const streetAdr = street ? street : '';
   const houseAdr = house ? house : '';
-  const cityAdr = city ? city : '';
 
   return (
     <DetailsPopupStyled>
@@ -28,7 +27,7 @@ export default function PoiDetails(props) {
       }
       {city !== null &&
         <div className='data-row'>
-          <h3>city:</h3><span>{cityAdr}</span>
+          <h3>city:</h3><span>{city}</span>
         </div>
       }
       {category !== null &&

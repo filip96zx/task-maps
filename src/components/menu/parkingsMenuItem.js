@@ -5,7 +5,7 @@ import ParkingsContext from '../../globalState/parkingsContext';
 import config from '../../config/config';
 import ItemsCount from './itemsCount';
 
-export default function ParkingsMenuItem(props) {
+export default function ParkingsMenuItem({ showMenu }) {
   const { data, fetchData, filterFreeSpaces, filterChargers, setIconsBy } = useContext(ParkingsContext);
   const { categories, showParkingsCategory } = useContext(DataDisplayContext);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -15,8 +15,8 @@ export default function ParkingsMenuItem(props) {
   }, [categories.parkings]);
 
   useEffect(() => {
-    if (!props.showMenu) setShowDropdown(false);
-  }, [props.showMenu]);
+    if (!showMenu) setShowDropdown(false);
+  }, [showMenu]);
 
   const handleShowCategory = () => {
     showParkingsCategory();

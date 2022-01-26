@@ -8,8 +8,7 @@ import VehiclesContext from "../../globalState/vehiclesContext";
 import ParkingsContext from "../../globalState/parkingsContext";
 
 
-function Marker(props) {
-  const { clusterer, data } = props;
+function Marker({clusterer, data}) {
   const [showInfoWindow, setShowInfoWindow] = useState(false);
   const markerRef = useRef();
   const discriminatorNormalized = data.discriminator.toLowerCase();

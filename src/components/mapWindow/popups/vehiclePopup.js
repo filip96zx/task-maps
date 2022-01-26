@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import DataDisplayContext from '../../../globalState/dataDisplayContext';
 import PopupStyled from './popup.style';
 
-export default function VehiclePopup(props) {
+export default function VehiclePopup({data}) {
   const { setDetailsPopup } = useContext(DataDisplayContext);
-  const { name, rangeKm, type } = props.data;
+  const { name, rangeKm, type } = data;
   const typeNormalized = type.toLowerCase();
 
   const openMenuDetailsPopup = () => {
-    setDetailsPopup(props.data);
+    setDetailsPopup(data);
   };
 
   return (

@@ -3,14 +3,14 @@ import VehicleMenuDetails from './detailsPopups/vehicleDetails';
 import ParkingMenuDetails from './detailsPopups/parkingDetails';
 import PoiMenuDetails from './detailsPopups/poiDetails';
 
-export default function DetailsPopup(props) {
-  const discriminatorNormalized = props.data.discriminator.toLowerCase();
+export default function DetailsPopup({ data }) {
+  const discriminatorNormalized = data.discriminator.toLowerCase();
 
   return (
     <>
-      {discriminatorNormalized === 'vehicle' && <VehicleMenuDetails data={props.data} />}
-      {discriminatorNormalized === 'parking' && <ParkingMenuDetails data={props.data} />}
-      {discriminatorNormalized === 'poi' && <PoiMenuDetails data={props.data} />}
+      {discriminatorNormalized === 'vehicle' && <VehicleMenuDetails data={data} />}
+      {discriminatorNormalized === 'parking' && <ParkingMenuDetails data={data} />}
+      {discriminatorNormalized === 'poi' && <PoiMenuDetails data={data} />}
     </>
   );
 }

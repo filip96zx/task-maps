@@ -3,14 +3,13 @@ import DataDisplayContext from '../../../globalState/dataDisplayContext';
 import Button from '../../ui/button';
 import DetailsPopupStyled from './detailsPopup.style';
 
-export default function ParkingsDetails(props) {
+export default function ParkingsDetails({ data }) {
   const { closeDetailsPopup } = useContext(DataDisplayContext);
-  const { name, spacesCount, availableSpacesCount, chargers } = props.data;
-  const { street, house, city } = props.data.address;
+  const { name, spacesCount, availableSpacesCount, chargers } = data;
+  const { street, house, city } = data.address;
 
-  const streetAdr = street ? street : '';
-  const houseAdr = house ? house : '';
-  const cityAdr = city ? city : '';
+  const streetAdr = street || '';
+  const houseAdr = house || '';
 
 
 
@@ -25,7 +24,7 @@ export default function ParkingsDetails(props) {
       }
       {city !== null &&
         <div className='data-row'>
-          <h3>city:</h3><span>{cityAdr}</span>
+          <h3>city:</h3><span>{city}</span>
         </div>
       }
       {spacesCount !== null &&

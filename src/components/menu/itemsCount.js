@@ -1,8 +1,7 @@
 import React from 'react';
 import ItemsCountStyled from './itemsCount.style';
 
-export default function ItemsCount(props) {
-  const { count } = props;
+export default function ItemsCount({ count }) {
   return (
     <ItemsCountStyled>
       <label>count: </label>

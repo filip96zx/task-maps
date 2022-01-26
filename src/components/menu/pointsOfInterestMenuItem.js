@@ -5,7 +5,7 @@ import MenuItemStyled from './menuItem.style';
 import PoiContext from '../../globalState/poiContext';
 import config from '../../config/config';
 
-export default function PointsOfInterestMenuItem(props) {
+export default function PointsOfInterestMenuItem({ showMenu }) {
   const { data, fetchData } = useContext(PoiContext);
   const { categories, showPoiCategory } = useContext(DataDisplayContext);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -15,8 +15,8 @@ export default function PointsOfInterestMenuItem(props) {
   }, [categories.poi]);
 
   useEffect(() => {
-    if (!props.showMenu) setShowDropdown(false);
-  }, [props.showMenu]);
+    if (!showMenu) setShowDropdown(false);
+  }, [showMenu]);
 
   const handleShowCategory = () => {
     showPoiCategory();

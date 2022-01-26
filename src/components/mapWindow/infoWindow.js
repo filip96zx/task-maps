@@ -4,8 +4,7 @@ import VehiclePopup from './popups/vehiclePopup';
 import ParkingPopup from './popups/parkingPopup';
 import PoiPopup from './popups/poiPopup';
 
-export default function InfoWindow(props) {
-  const { onCloseClick, anchor, data, type } = props;
+export default function InfoWindow({ onCloseClick, anchor, data, type }) {
 
   let popup;
 
