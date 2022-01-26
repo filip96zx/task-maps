@@ -10,17 +10,6 @@ const LayoutStyled = styled.div`
   flex-direction: column;
   overflow: hidden;
   color: ${styles.fontColor};
-  :before {
-    content: "";
-    position: absolute;
-    bottom: -40%;
-    left:-20%;
-    background-color: ${styles.mainColor};
-    background-image: radial-gradient(circle, ${styles.secondaryColor} -15%, ${styles.mainColor} 47%);
-    width: 200%;
-    height: 200%;
-    z-index: -1;
-  }
   main {
     position: relative;
     flex-grow: 1;
@@ -31,6 +20,17 @@ const LayoutStyled = styled.div`
       height: 100%;
       justify-content: center;
       align-items: center;
+    }
+    :before {
+      content: "";
+      position: absolute;
+      bottom: -40%;
+      left:-20%;
+      background-color: ${styles.mainColor};
+      background-image: radial-gradient(circle, ${styles.secondaryColor} -15%, ${styles.mainColor} 47%);
+      width: 200%;
+      height: 200%;
+      z-index: -1;
     }
   }
 `;
