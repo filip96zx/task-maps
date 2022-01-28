@@ -16,7 +16,8 @@ const ButtonStyled = styled.button`
   :hover {
     color:${styles.fontColorDarker};
     background: ${styles.mainColorTransparent};
-    box-shadow: 0 0 3px 0 ${styles.secondaryColor};
+    box-shadow: 0 0 3px 0 ${styles.secondaryColor},
+                inset 0 0 2px 0 ${styles.secondaryColor};
   }
 `;
 
