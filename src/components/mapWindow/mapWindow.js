@@ -10,13 +10,11 @@ import PoiContext from '../../globalState/poiContext';
 
 
 function MapWindow() {
-  const dataDisplay = useContext(DataDisplayContext);
+  const { categories, menuDetailsPopup } = useContext(DataDisplayContext);
   const vehiclesContext = useContext(VehiclesContext);
   const parkingsContext = useContext(ParkingsContext);
   const poiContext = useContext(PoiContext);
-  const categories = dataDisplay.categories;
-  const { menuDetailsPopup } = dataDisplay;
-
+  
   return (
     <main>
       <Map>
