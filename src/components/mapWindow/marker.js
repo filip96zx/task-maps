@@ -4,8 +4,7 @@ import { setVehicleStatusIcon, setVehicleBatteryIcon } from '../../helpers/marke
 import { setParkingHasFreeSpaceIcon, setParkingsHasChargersIcon } from '../../helpers/markers/parkingMarkers';
 import setDefaultMarkerColor from '../../helpers/markers/defaultMarkers';
 import InfoWindow from "./infoWindow";
-import VehiclesContext from "../../globalState/vehiclesContext";
-import ParkingsContext from "../../globalState/parkingsContext";
+import { VehiclesContext, ParkingsContext } from "../../globalState";
 
 
 function Marker({ clusterer, data }) {

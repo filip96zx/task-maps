@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import styles from "../../globalStyles/variables";
 
 const setOvfVisible = keyframes`

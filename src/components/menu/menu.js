@@ -4,9 +4,7 @@ import ParkingsMenuItem from './parkingsMenuItem';
 import PointsOfInterestMenuItem from './pointsOfInterestMenuItem';
 import MenuStyled from './menu.style';
 import Spinner from '../ui/spinner.style';
-import VehiclesContext from '../../globalState/vehiclesContext';
-import ParkingsContext from '../../globalState/parkingsContext';
-import PoiContext from '../../globalState/poiContext';
+import { VehiclesContext, PoiContext, ParkingsContext } from '../../globalState';
 import Button from '../ui/button';
 import { ReactComponent as Hamburgericon } from '../../assets/hamburger.svg';
 
@@ -36,9 +34,9 @@ export default function Menu() {
         <Button onClick={toggleMenuHandler}><Hamburgericon /></Button>
       </div>
       <menu className={showMenu ? 'show' : null}>
-        <VehiclesMenuItem showMenu={showMenu}/>
-        <ParkingsMenuItem showMenu={showMenu}/>
-        <PointsOfInterestMenuItem showMenu={showMenu}/>
+        <VehiclesMenuItem showMenu={showMenu} />
+        <ParkingsMenuItem showMenu={showMenu} />
+        <PointsOfInterestMenuItem showMenu={showMenu} />
       </menu>
     </MenuStyled>
   );

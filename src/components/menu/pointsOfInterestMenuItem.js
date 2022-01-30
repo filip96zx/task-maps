@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import DataDisplayContext from '../../globalState/dataDisplayContext';
+import { DataDisplayContext, PoiContext } from '../../globalState';
 import ItemsCount from './itemsCount';
 import MenuItemStyled from './menuItem.style';
-import PoiContext from '../../globalState/poiContext';
 import config from '../../config/config';
 
 export default function PointsOfInterestMenuItem({ showMenu }) {

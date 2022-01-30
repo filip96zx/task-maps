@@ -1,16 +1,14 @@
 import React from 'react';
-import VehicleMenuDetails from './detailsPopups/vehicleDetails';
-import ParkingMenuDetails from './detailsPopups/parkingDetails';
-import PoiMenuDetails from './detailsPopups/poiDetails';
+import { ParkingsDetails, PoiDetails, VehicleDetails } from './detailsPopups';
 
 export default function DetailsPopup({ data }) {
   const discriminatorNormalized = data.discriminator.toLowerCase();
 
   return (
     <>
-      {discriminatorNormalized === 'vehicle' && <VehicleMenuDetails data={data} />}
-      {discriminatorNormalized === 'parking' && <ParkingMenuDetails data={data} />}
-      {discriminatorNormalized === 'poi' && <PoiMenuDetails data={data} />}
+      {discriminatorNormalized === 'vehicle' && <VehicleDetails data={data} />}
+      {discriminatorNormalized === 'parking' && <ParkingsDetails data={data} />}
+      {discriminatorNormalized === 'poi' && <PoiDetails data={data} />}
     </>
   );
 }

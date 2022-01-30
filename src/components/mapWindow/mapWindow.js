@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
-import DataDisplayContext from '../../globalState/dataDisplayContext';
 import Map from './map';
 import MarkerCluster from './markerCluster';
 import DetailsPopup from './detailsPopup';
-import VehiclesContext from '../../globalState/vehiclesContext';
-import ParkingsContext from '../../globalState/parkingsContext';
-import PoiContext from '../../globalState/poiContext';
+import { VehiclesContext, ParkingsContext, PoiContext, DataDisplayContext } from '../../globalState';
+
 
 
 
@@ -14,7 +12,7 @@ function MapWindow() {
   const vehiclesContext = useContext(VehiclesContext);
   const parkingsContext = useContext(ParkingsContext);
   const poiContext = useContext(PoiContext);
-  
+
   return (
     <main>
       <Map>

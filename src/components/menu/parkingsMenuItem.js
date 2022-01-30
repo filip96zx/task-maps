@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import DataDisplayContext from '../../globalState/dataDisplayContext';
+import { DataDisplayContext, ParkingsContext } from '../../globalState';
 import MenuItemStyled from './menuItem.style';
-import ParkingsContext from '../../globalState/parkingsContext';
 import config from '../../config/config';
 import ItemsCount from './itemsCount';
 

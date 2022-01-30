@@ -1,8 +1,6 @@
 import React from 'react';
 import { InfoWindow as GoogleInfoWindow } from '@react-google-maps/api';
-import VehiclePopup from './popups/vehiclePopup';
-import ParkingPopup from './popups/parkingPopup';
-import PoiPopup from './popups/poiPopup';
+import { ParkingPopup, VehiclePopup, PoiPopup } from './popups';
 
 export default function InfoWindow({ onCloseClick, anchor, data, type }) {
 
