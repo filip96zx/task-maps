@@ -14,7 +14,7 @@ export default function VehicleDetails({ data }) {
   return (
     <DetailsPopupStyled>
       <Button className="close-btn" onClick={closeDetailsPopup}>&times;</Button>
-      <h2>{name}</h2>
+      <h2 data-testid='vehicleDetailsHeader'>{name}</h2>
       {type !== null &&
         <div className='data-row'>
           <h3>type:</h3><span>{typeNormalized}</span>
