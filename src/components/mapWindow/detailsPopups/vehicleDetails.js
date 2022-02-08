@@ -14,7 +14,7 @@ export default function VehicleDetails({ data }) {
   return (
     <DetailsPopupStyled>
       <Button className="close-btn" onClick={closeDetailsPopup}>&times;</Button>
-      <h2 data-testid='header-details'>{name}</h2>
+      <h2 >{name}</h2>
       {type !== null &&
         <div className='data-row'>
           <h3>type:</h3><span data-testid='type'>{typeNormalized}</span>
@@ -22,22 +22,22 @@ export default function VehicleDetails({ data }) {
       }
       {color !== null &&
         <div className='data-row'>
-          <h3>color:</h3><span data-testid='color'>{colorNormalized}</span>
+          <h3>color:</h3><span >{colorNormalized}</span>
         </div>
       }
       {platesNumber !== null &&
         <div className='data-row'>
-          <h3>plates number:</h3><span data-testid='platesNumber'>{platesNumber}</span>
+          <h3>plates number:</h3><span >{platesNumber}</span>
         </div>
       }
       {rangeKm !== null &&
         <div className='data-row'>
-          <h3>range km:</h3><span data-testid='range'>{rangeKm}km</span>
+          <h3>range km:</h3><span >{rangeKm}km</span>
         </div>
       }
       {batteryLevelPct !== null &&
         <div className='data-row'>
-          <h3>battery:</h3><span data-testid='batteryLevelPct'>{batteryLevelPct}%</span>
+          <h3>battery:</h3><span >{batteryLevelPct}%</span>
         </div>
       }
 
