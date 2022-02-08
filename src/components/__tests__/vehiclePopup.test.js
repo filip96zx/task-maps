@@ -1,5 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { VehiclePopup } from '../../mapWindow/popups';
+import { VehiclePopup } from '../mapWindow/popups';
+import { DataDisplayContext } from '../../globalState';
+import userEvent from '@testing-library/user-event';
 
 const dummyVehicle = {
   name: 'Some vehicle',
@@ -40,13 +42,16 @@ test('not renders vehicles popup rangeKM if it is null', () => {
 });
 
 
+test('more... button calls setDetailsPopup', () => {
+  const context = {
+    setDetailsPopup: jest.fn()
+  };
+  render(<DataDisplayContext.Provider value={context}><VehiclePopup data={dummyVehicle} /></DataDisplayContext.Provider>);
 
+  const button = screen.getByRole('button', { name: /more\.\.\./i });
 
-// jak przetestować "more...""
+  userEvent.click(button);
 
-// test('more... buttons functions is called', () => {
-//   render(<VehiclePopup data={dummyVehicle} />);
-//   const openDetails = jest.spyOn(<VehiclePopup data={dummyVehicle} />, 'openMenuDetailsPopup');
+  expect(context.setDetailsPopup).toBeCalled();
 
-//   expect(openDetails).toHaveBeenCalledTimes(1)
-// });
+});

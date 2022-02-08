@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import DataDisplayContext from '../../../globalState/dataDisplayContext';
+import { DataDisplayContext } from '../../../globalState';
 import PopupStyled from './popup.style';
 
 export default function PoiPopup({ data }) {

@@ -56,15 +56,15 @@ export default function ParkingsMenuItem({ showMenu }) {
         </li>
         <li>
           <label htmlFor="chargers">chargers</label>
-          <select name="status" id="status" onChange={filterByChargersHandler} >
+          <select name="chargers" id="chargers" onChange={filterByChargersHandler} >
             <option value="all">all</option>
             <option value="with">yes</option>
             <option value="without">no</option>
           </select>
         </li>
         <li>
-          <label htmlFor="chargers">free spaces</label>
-          <select name="status" id="status" onChange={filterByFreeSpacesHandler} >
+          <label htmlFor="free-spaces">free spaces</label>
+          <select name="free-spaces" id="free-spaces" onChange={filterByFreeSpacesHandler} >
             <option value="all">all</option>
             <option value="free">yes</option>
             <option value="full">no</option>
