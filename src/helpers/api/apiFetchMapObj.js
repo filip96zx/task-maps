@@ -37,7 +37,7 @@ const useFetchMapObj = (objName) => {
 
     if (objName) {
       try {
-        const responseData = await fetch(config.apiURL + 'map?objectType=' + objName).then(response => {
+        const responseData = await fetch(process.env.REACT_APP_API_URL + 'map?objectType=' + objName).then(response => {
           if (response.ok) {
             return response.json();
           } else {

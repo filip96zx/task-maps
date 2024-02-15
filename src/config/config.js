@@ -4,8 +4,6 @@ const config = {
   vehicleDummyData: true, // if true use random generated data else fetch from api
   parkingDummyData: true, // if true use random generated data else fetch from api
   poiDummyData: true,  // if true use random generated data else fetch from api
-  apiURL: 'https://dev.vozilla.pl/api-client-portal/',
-  googleMapsApiKey: "AIzaSyAHyW0XtPY3HlbyMHEgHvGcRfNlkjbgsdk",
   //map start config
   mapCenter: { lat: 0, lng: 0 }, // <-not working as expected
   mapZoomLevel: 7,
